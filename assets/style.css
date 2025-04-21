@@ -1,0 +1,86 @@
+/* Custom CSS for Face Similarity App */
+
+/* Main container styling */
+.main .block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Sidebar styling - clean and minimal */
+section[data-testid="stSidebar"] {
+    background-color: #f8f9fa;
+    border-right: 1px solid #e9ecef;
+}
+
+section[data-testid="stSidebar"] .sidebar-content {
+    padding: 1rem 0;
+}
+
+/* Simple text links in sidebar */
+section[data-testid="stSidebar"] a {
+    color: #212529;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem 0;
+    border-radius: 0.25rem;
+}
+
+section[data-testid="stSidebar"] a:hover {
+    background-color: #e9ecef;
+}
+
+section[data-testid="stSidebar"] a.active {
+    background-color: #dee2e6;
+    font-weight: bold;
+}
+
+/* Remove sidebar padding */
+section[data-testid="stSidebar"] > div {
+    padding-top: 1rem;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #1e3d59;
+}
+
+/* Metrics styling */
+div[data-testid="stMetric"] {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Button styling */
+.stButton > button {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #1e3d59;
+    color: white;
+}
+
+.stButton > button:hover {
+    background-color: #2b5876;
+}
+
+/* File uploader styling */
+.uploadedFile {
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* Progress bar styling */
+div[data-testid="stProgressBar"] {
+    height: 20px;
+    border-radius: 5px;
+}
+
+/* Success/Error messages */
+.stSuccess, .stError {
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
