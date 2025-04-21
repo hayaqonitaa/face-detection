@@ -1,36 +1,44 @@
 import streamlit as st
 
-# Set page config
+# Page config
 st.set_page_config(
-    page_title="Face Similarity App",
+    page_title="Facenalyze",
     page_icon="👤",
     layout="wide"
 )
 
-# Apply custom CSS
+# Custom CSS (optional)
 try:
     with open('assets/style.css') as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 except FileNotFoundError:
-    st.warning("Style file not found. Please create the assets/style.css file.")
+    st.warning("Style file not found. Please create the assets/style.css file in the assets folder.")
 
-# Main page content
-st.title("Face Similarity Detection System")
+# Header
+st.title("👤 Face Similarity and Ethnic Detection System")
+st.markdown("---")
+
+# Welcome text
 st.markdown("""
-## Welcome to Face Similarity Detection App
+## 👋 Welcome!
 
-This application allows you to compare two faces and determine their similarity.
+Welcome to the **Face Similarity and Ethnicity Detection App**!  
+This web application lets you **compare faces** and **predict ethnicity** with powerful, deep learning-based detection algorithms.  
+It's designed to be **easy to use**, **accurate**, and **privacy-friendly**.
 
-Use the sidebar to navigate to different features:
-- **Face Similarity**: Upload and compare two face images
-- **About**: Learn more about the application
-- **Settings**: Configure application settings
+### Features:
+- **Face Similarity**  
+  Compare two face images and get a similarity score based on facial embeddings. The app uses **FaceNet** (InceptionResnetV1) for face embedding extraction and computes the similarity between the images.
 
-To get started, click on "Face Similarity" in the sidebar.
+- **Ethnicity Detection**  
+  Predict the likely **ethnicity** of a person based on their facial features. This feature uses a **custom-trained ResNet model** that was fine-tuned on a specific facial ethnicity dataset. The model classifies faces into five ethnic groups: **Javanese**, **Sundanese**, **Chinese**, **Minahasan**, and **Betawi**.
+
+Use the **sidebar** to navigate between features and explore both **Face Similarity** and **Ethnicity Detection**.
+
 """)
 
-# Show a sample image
-st.image("https://via.placeholder.com/800x400.png?text=Face+Similarity+Detection", use_container_width=True)
 
-# Note: The sidebar is handled automatically by Streamlit
-# when using the pages/ directory structure
+# Footer
+st.markdown("---")
+st.markdown("Made with ❤️ by 008, 013, 017")
+

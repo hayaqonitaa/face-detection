@@ -56,7 +56,7 @@ if 'similarity_score' not in st.session_state:
 def display_image(file, container):
     if file is not None:
         img = Image.open(file)
-        container.image(img, use_container_width=True)
+        container.image(img)
         return img
     return None
 

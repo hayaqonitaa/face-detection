@@ -1,12 +1,12 @@
-# Face Similarity Detection App
+# Face Similarity and Ethnicity Detection App
 
-A Streamlit-based application for comparing facial similarity between two images using deep learning.
+A Streamlit-based application for comparing facial similarity between two images and predicting facial ethnicity using deep learning.
 
 ## Overview
 
 This application uses facial recognition technology to detect faces in images and compute their similarity. It's built with Streamlit for the interface and uses MTCNN for face detection and FaceNet (InceptionResnetV1) for face embedding extraction.
 
-![Face Similarity App Screenshot](https://via.placeholder.com/800x400.png?text=Face+Similarity+App)
+In addition to facial similarity comparison, the application also provides **Ethnicity Detection**, which predicts the ethnic background of a detected face. This feature uses a custom-trained convolutional neural network (CNN) that was fine-tuned using the **ResNet50** architecture on a curated facial ethnicity dataset. The model is capable of classifying faces into five ethnic groups: Javanese, Sundanese, Chinese, Minahasan, and Betawi.
 
 ## Features
 
@@ -16,6 +16,8 @@ This application uses facial recognition technology to detect faces in images an
 - **Simple Navigation**: Text-only sidebar for easy access to different features
 - **Settings Management**: Configure application behavior through a dedicated settings page
 
+- **Ethnicity Detection**: Uses a deep learning model to classify the uploaded face into one of several predefined ethnic groups (e.g., Javanese, Sundanese, Chinese, etc.)
+
 ## Project Structure
 
 ```
@@ -23,8 +25,10 @@ face_similarity_app/
 ├── main.py               # Main app with navigation sidebar
 ├── pages/
 │   ├── 1_face_similarity.py  # First page - Face similarity
+│   └── 2_ethnic_detection.py  # Second page - Face similarity
 ├── utils/
-│   └── face_utils.py     # Utility functions for face processing
+│   ├── face_utils.py     # Utility functions for face processing
+│   └── model_suku.h5     # Trained model
 ├── assets/
 │   └── style.css         # Custom CSS styling
 └── requirements.txt      # Dependencies
@@ -63,6 +67,7 @@ face_similarity_app/
    - Upload images on the "Face Similarity" page
    - Adjust the threshold as needed
    - Click "Compare Faces" to process the images
+   - Use the "Ethnicity Detection" page to identify the ethnic group from a single face image
 
 ## Technical Details
 
@@ -70,6 +75,9 @@ face_similarity_app/
 - **Face Embedding**: InceptionResnetV1 (FaceNet) pre-trained on VGGFace2
 - **Similarity Metric**: Cosine Similarity
 - **Default Threshold**: 0.7 (70%)
+- **Ethnicity Detection**: Custom CNN model trained on 224x224 cropped face images
+- **Face Cropping**: Detected using MTCNN, resized to 224x224 pixels
+- **Prediction Output**: Five ethnic categories (Javanese, Sundanese, Chinese, Minahasan, Betawi)
 
 
 ## License
